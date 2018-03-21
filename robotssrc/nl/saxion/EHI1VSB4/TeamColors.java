@@ -1,0 +1,14 @@
+package nl.saxion.EHI1VSB4;
+
+import java.awt.*;
+
+public class TeamColors implements java.io.Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    public Color bodyColor;
+    public Color gunColor;
+    public Color radarColor;
+    public Color scanColor;
+    public Color bulletColor;
+}
