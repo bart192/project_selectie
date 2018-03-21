@@ -1,0 +1,6 @@
+#Robocode robot team
+#Wed Mar 14 12:21:08 CET 2018
+team.members=nl.saxion.MyLeader*,nl.saxion.MyRobot*,nl.saxion.MyRobot*,nl.saxion.MyRobot*
+team.author.name=
+robocode.version=1.9.3.0
+team.description=test
