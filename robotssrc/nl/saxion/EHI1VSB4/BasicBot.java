@@ -44,8 +44,6 @@ public class BasicBot extends TeamRobot{
         sendBroadcastMessage(new EnemyPosition(enemyX, enemyY));
 
         if (isTeammate(e.getName())) {
-            setTurnRight(30);
-            setAhead(30);
             return;
         }
 
@@ -61,7 +59,7 @@ public class BasicBot extends TeamRobot{
 
     private void setRobotColors() {
         // Prepare RobotColors object
-        RobotColors c = new RobotColors();
+        TeamColors c = new TeamColors();
 
         Color brown = new Color(139,69,19);
 
