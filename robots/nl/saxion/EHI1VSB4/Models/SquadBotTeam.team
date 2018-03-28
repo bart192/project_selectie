@@ -1,0 +1,6 @@
+#Robocode robot team
+#Wed Mar 28 12:27:24 CEST 2018
+team.members=nl.saxion.EHI1VSB4.Models.SquadBot*,nl.saxion.EHI1VSB4.Models.SquadBot*,nl.saxion.EHI1VSB4.Models.SquadBot*,nl.saxion.EHI1VSB4.Models.SquadBot*
+team.author.name=
+robocode.version=1.9.3.0
+team.description=Dikke poh

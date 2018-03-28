@@ -1,22 +1,24 @@
-package nl.saxion.EHI1VSB4;
+package nl.saxion.EHI1VSB4.Models;
 
-import org.apache.bcel.generic.NEW;
+import nl.saxion.EHI1VSB4.EnemyPosition;
+import nl.saxion.EHI1VSB4.TeamColors;
 import robocode.*;
 import robocode.util.Utils;
-import sampleteam.Point;
-import sampleteam.RobotColors;
 
 import java.awt.*;
 import java.io.IOException;
 
 public class BasicBot extends TeamRobot{
-
+    private int wallMargin = 45;
+    private int tooCloseToWall = 0;
     private RobotStatus robotStatus;
+    boolean isLeader = false;
 
+    @SuppressWarnings("InfiniteLoopStatement")
     @Override
     public void run() {
         super.run();
-
+        setLeader();
         setRobotColors();
 
         while (true) {
@@ -33,29 +35,44 @@ public class BasicBot extends TeamRobot{
 
     @Override
     public void onScannedRobot(ScannedRobotEvent e) {
-        // Calculate the angle to the scanned robot
-        double angle = getAngleOfScannedRobot(e);
+        if (isLeader) {
+            // Calculate the angle to the scanned robot
+            double angle = getAngleOfScannedRobot(e);
 
-        // Calculate the coordinates of the robot
-        double enemyX = getEnemyX(e, angle);
-        double enemyY = getEnemyY(e, angle);
+            // Calculate the coordinates of the robot
+            double enemyX = getEnemyX(e, angle);
+            double enemyY = getEnemyY(e, angle);
 
-        // Send enemy position to teammates
-        sendBroadcastMessage(new EnemyPosition(enemyX, enemyY));
+            // Send enemy position to teammates
+            sendBroadcastMessage(new EnemyPosition(enemyX, enemyY));
 
-        if (isTeammate(e.getName())) {
-            setTurnRight(180);
-            return;
+            if (isTeammate(e.getName())) {
+                setTurnRight(180);
+                return;
+            }
+
+            moveToEnemyPos(e);
         }
-
-        moveToEnemyPos(e);
-
     }
 
     private void moveToEnemyPos(ScannedRobotEvent e) {
         setTurnRightRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
         setAhead(100);
         fire(100);
+    }
+
+    public void setLeader() {
+        String[] teammates = getTeammates();
+        if (teammates != null) {
+            for (int i = 0; i < teammates.length; i++) {
+                switch (i) {
+                    case 0: {
+                        isLeader = true;
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     private void setRobotColors() {

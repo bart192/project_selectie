@@ -1,0 +1,6 @@
+#Robocode robot team
+#Wed Mar 28 12:28:48 CEST 2018
+team.members=nl.saxion.EHI1VSB4.Models.BasicBot*,nl.saxion.EHI1VSB4.Models.BasicBot*,nl.saxion.EHI1VSB4.Models.BasicBot*,nl.saxion.EHI1VSB4.Models.BasicBot*
+team.author.name=
+robocode.version=1.9.3.0
+team.description=Poh
