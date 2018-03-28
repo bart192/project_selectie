@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="345fb80f-fdd9-40ea-be5a-e4cd3eda1d08" name="Default" comment="Added the basic bot to the project">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/BasicsBot.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/Communication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/TeamCommunication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robots/robot.database" afterPath="$PROJECT_DIR$/robots/robot.database" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotsbin/production/robocode/nl/saxion/EHI1VSB4/BasicBot.class" afterPath="$PROJECT_DIR$/robotsbin/production/robocode/nl/saxion/EHI1VSB4/BasicBot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotsbin/production/robocode/nl/saxion/EHI1VSB4/TeamColors.class" afterPath="$PROJECT_DIR$/robotsbin/production/robocode/nl/saxion/EHI1VSB4/TeamColors.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/robocode.properties" afterPath="$PROJECT_DIR$/config/robocode.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/window.properties" afterPath="$PROJECT_DIR$/config/window.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/BasicBot.java" afterPath="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/BasicBot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/TeamColors.java" afterPath="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/TeamColors.java" />
     </list>
     <ignored path="robocode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/robocode$Robocode.coverage" NAME="Robocode Coverage Results" MODIFIED="1522222967573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/robocode$Robocode.coverage" NAME="Robocode Coverage Results" MODIFIED="1522223801966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -30,8 +39,8 @@
       <file leaf-file-name="BasicBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/BasicBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+            <state relative-caret-position="145">
+              <caret line="42" column="43" lean-forward="true" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,41 +48,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeamColors.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/TeamColors.java">
+      <file leaf-file-name="Communication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/Communication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="510">
+              <caret line="34" column="64" lean-forward="false" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1683#1684#0" expanded="true" />
+                <element signature="e#1719#1720#0" expanded="true" />
+                <element signature="e#3884#3885#0" expanded="true" />
+                <element signature="e#3917#3918#0" expanded="true" />
+                <element signature="e#3972#3973#0" expanded="true" />
+                <element signature="e#4006#4007#0" expanded="true" />
+                <element signature="e#4079#4080#0" expanded="true" />
+                <element signature="e#4131#4132#0" expanded="true" />
+                <element signature="e#4166#4167#0" expanded="true" />
+                <element signature="e#4199#4200#0" expanded="true" />
+                <element signature="e#4383#4384#0" expanded="true" />
+                <element signature="e#4425#4426#0" expanded="true" />
+                <element signature="e#4466#4467#0" expanded="true" />
+                <element signature="e#4508#4509#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnemyPosition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/EnemyPosition.java">
+      <file leaf-file-name="BasicsBot.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/BasicsBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScannedRobotEvent.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/libs/robocode.jar!/robocode/ScannedRobotEvent.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyFirstRobot.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/robotssrc/sample/MyFirstRobot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="557">
+              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,8 +87,28 @@
       <file leaf-file-name="MyFirstLeader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/MyFirstLeader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="-366">
               <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="46" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyFirstDroid.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/MyFirstDroid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="33" column="7" lean-forward="false" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/Point.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -97,6 +122,16 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Teams</find>
+      <find>Simplebot</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>TeamCommunication</replace>
+      <replace>BasicsBot</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,13 +154,17 @@
         <option value="$PROJECT_DIR$/robotssrc/nl/saxion/Three.java" />
         <option value="$PROJECT_DIR$/robotssrc/nl/saxion/MyRobot.java" />
         <option value="$PROJECT_DIR$/robotssrc/nl/saxion/MyLeader.java" />
-        <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/TeamColors.java" />
         <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Movements.java" />
         <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Basic.java" />
         <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Communication.java" />
         <option value="$PROJECT_DIR$/robotssrc/sampleteam/MyFirstLeader.java" />
         <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/EnemyPosition.java" />
+        <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/TeamColors.java" />
         <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/BasicBot.java" />
+        <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/Calculations.java" />
+        <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/BasicsBot.java" />
+        <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/TeamCommunication.java" />
+        <option value="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/Communication.java" />
       </list>
     </option>
   </component>
@@ -184,6 +223,13 @@
               <item name="robocode" type="b2602c69:ProjectViewProjectNode" />
               <item name="project_selectie" type="462c0819:PsiDirectoryNode" />
               <item name="robotssrc" type="462c0819:PsiDirectoryNode" />
+              <item name="EHI1VSB4" type="462c0819:PsiDirectoryNode" />
+              <item name="Attributes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="robocode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project_selectie" type="462c0819:PsiDirectoryNode" />
+              <item name="robotssrc" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -211,14 +257,17 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="robocode" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/robots/saxion" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes" />
       <recent name="$PROJECT_DIR$/robotssrc" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes" />
+      <recent name="$PROJECT_DIR$/robots/saxion" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -785,14 +834,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/BasicBot.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
@@ -802,69 +843,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/javadoc/robocode/control/events/BattleEvent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javadoc/robocode/util/package-summary.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javadoc/robocode/util/package-frame.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javadoc/robocode/util/package-tree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javadoc/robocode/util/Utils.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/battles/sample.battle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/battles/intro.battle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robotssrc/sample/Fire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robotssrc/sample/Crazy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/robotssrc/robot.database">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -977,42 +955,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/RobotColors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="1" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="28" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/MyFirstDroid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" column="7" lean-forward="false" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/MyFirstLeader.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/MyFirstLeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="46" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,6 +1042,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Communication.java" />
+    <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/RobotColors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/TeamColors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/EnemyPosition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1104,18 +1068,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/TeamColors.java">
+    <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/MyFirstLeader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="-366">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="46" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/MyFirstDroid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="33" column="7" lean-forward="false" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/sampleteam/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/Calculations.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/Communication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/Calculations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/DHI1VSab4/nl/saxion/dhi1vsab4/attributes/Simplebot.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="63" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/DHI1VSab4/nl/saxion/dhi1vsab4/attributes/Teams.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1549">
+          <caret line="264" column="5" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="264" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/TeamCommunication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#5724#5725#0" expanded="true" />
+            <element signature="e#5779#5780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/Communication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="64" lean-forward="false" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#3884#3885#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
+            <element signature="e#3972#3973#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4079#4080#0" expanded="true" />
+            <element signature="e#4131#4132#0" expanded="true" />
+            <element signature="e#4166#4167#0" expanded="true" />
+            <element signature="e#4199#4200#0" expanded="true" />
+            <element signature="e#4383#4384#0" expanded="true" />
+            <element signature="e#4425#4426#0" expanded="true" />
+            <element signature="e#4466#4467#0" expanded="true" />
+            <element signature="e#4508#4509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Attributes/BasicsBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/DHI1VSab4/nl/saxion/dhi1vsab4/attributes/Communication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="173" column="5" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="173" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/BasicBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+        <state relative-caret-position="145">
+          <caret line="42" column="43" lean-forward="true" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

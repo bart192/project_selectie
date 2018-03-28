@@ -1,5 +1,6 @@
 package nl.saxion.EHI1VSB4;
 
+
 import java.awt.*;
 
 public class TeamColors implements java.io.Serializable {

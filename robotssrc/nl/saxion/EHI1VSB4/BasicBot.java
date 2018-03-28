@@ -44,6 +44,7 @@ public class BasicBot extends TeamRobot{
         sendBroadcastMessage(new EnemyPosition(enemyX, enemyY));
 
         if (isTeammate(e.getName())) {
+            setTurnRight(180);
             return;
         }
 
