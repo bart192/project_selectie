@@ -58,7 +58,7 @@ public class BasicBot extends TeamRobot{
     private void moveToEnemyPos(ScannedRobotEvent e) {
         setTurnRightRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
         setAhead(100);
-        fire(100);
+        fireByEnergy();
     }
 
     public void setLeader() {
@@ -72,6 +72,20 @@ public class BasicBot extends TeamRobot{
                     }
                 }
             }
+        }
+    }
+
+    private void fireByEnergy(){
+        double currentHP = this.getEnergy();
+
+        if(currentHP >= 75){
+            fire(3);
+        }
+        else if(currentHP > 35 && currentHP < 75){
+            fire(2);
+        }
+        else{
+            fire(1);
         }
     }
 
