@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="345fb80f-fdd9-40ea-be5a-e4cd3eda1d08" name="Default" comment="Added the basic bot to the project">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/robotsbin/production/robocode/sample/SittingDuck.data/count.dat" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robots/robot.database" afterPath="$PROJECT_DIR$/robots/robot.database" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotsbin/production/robocode/nl/saxion/EHI1VSB4/Models/BasicBot.class" afterPath="$PROJECT_DIR$/robotsbin/production/robocode/nl/saxion/EHI1VSB4/Models/BasicBot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotsbin/production/robocode/sample/SittingDuck.class" afterPath="$PROJECT_DIR$/robotsbin/production/robocode/sample/SittingDuck.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/robocode.properties" afterPath="$PROJECT_DIR$/config/robocode.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/window.properties" afterPath="$PROJECT_DIR$/config/window.properties" />
@@ -33,9 +36,12 @@
       <file leaf-file-name="BasicBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Models/BasicBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
+            <state relative-caret-position="885">
               <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-              <folding />
+              <folding>
+                <marker date="1522839703209" expanded="false" signature="3654:3665" ph=" { " />
+                <marker date="1522839703209" expanded="false" signature="3689:3695" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,6 +154,7 @@
       <find>wallMargin</find>
       <find>tooCloseToWall</find>
       <find>wallAvoidance</find>
+      <find>&lt;&lt;&lt;&lt;</find>
     </findStrings>
     <replaceStrings>
       <replace>TeamCommunication</replace>
@@ -155,6 +162,7 @@
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -806,7 +814,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="959" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -821,7 +828,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16422467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16422467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1226,9 +1233,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/robotssrc/nl/saxion/EHI1VSB4/Models/BasicBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
+        <state relative-caret-position="885">
           <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1522839703209" expanded="false" signature="3654:3665" ph=" { " />
+            <marker date="1522839703209" expanded="false" signature="3689:3695" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
