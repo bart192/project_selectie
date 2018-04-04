@@ -19,6 +19,15 @@ public class BasicBot extends TeamRobot{
         super.run();
         setRobotColors();
 
+        this.addCustomEvent(new Condition("wallAvoidance") {
+            public boolean test() {
+                return BasicBot.this.getX() <= (double)BasicBot.this.wallMargin ||
+                        BasicBot.this.getX() >= BasicBot.this.getBattleFieldWidth() - (double)BasicBot.this.wallMargin ||
+                        BasicBot.this.getY() <= (double)BasicBot.this.wallMargin ||
+                        BasicBot.this.getY() >= BasicBot.this.getBattleFieldHeight() - (double)BasicBot.this.wallMargin;
+            }
+        });
+
         while (true) {
             turnGunRight(360);
             ahead(200);
@@ -89,6 +98,17 @@ public class BasicBot extends TeamRobot{
         setRadarColor(c.radarColor);
         setScanColor(c.scanColor);
         setBulletColor(c.bulletColor);
+    }
+
+    public void onCustomEvent(CustomEvent e) {
+        if (e.getCondition().getName().equals("wallAvoidance") && this.tooCloseToWall <= 0) {
+            this.tooCloseToWall += this.wallMargin;
+            setTurnLeft(180);
+        }
+    }
+
+    public void onHitWall(HitWallEvent e) {
+        this.tooCloseToWall = 0;
     }
 
     private void sendBroadcastMessage(EnemyPosition p) {
