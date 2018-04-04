@@ -12,13 +12,11 @@ public class BasicBot extends TeamRobot{
     private int wallMargin = 45;
     private int tooCloseToWall = 0;
     private RobotStatus robotStatus;
-    boolean isLeader = false;
 
     @SuppressWarnings("InfiniteLoopStatement")
     @Override
     public void run() {
         super.run();
-        setLeader();
         setRobotColors();
 
         while (true) {
@@ -35,44 +33,28 @@ public class BasicBot extends TeamRobot{
 
     @Override
     public void onScannedRobot(ScannedRobotEvent e) {
-        if (isLeader) {
-            // Calculate the angle to the scanned robot
-            double angle = getAngleOfScannedRobot(e);
+        // Calculate the angle to the scanned robot
+        double angle = getAngleOfScannedRobot(e);
 
-            // Calculate the coordinates of the robot
-            double enemyX = getEnemyX(e, angle);
-            double enemyY = getEnemyY(e, angle);
+        // Calculate the coordinates of the robot
+        double enemyX = getEnemyX(e, angle);
+        double enemyY = getEnemyY(e, angle);
 
-            // Send enemy position to teammates
-            sendBroadcastMessage(new EnemyPosition(enemyX, enemyY));
+        // Send enemy position to teammates
+        sendBroadcastMessage(new EnemyPosition(enemyX, enemyY));
 
-            if (isTeammate(e.getName())) {
-                setTurnRight(180);
-                return;
-            }
-
-            moveToEnemyPos(e);
+        if (isTeammate(e.getName())) {
+            setTurnRight(180);
+            return;
         }
+
+        // moveToEnemyPos(e);
     }
 
     private void moveToEnemyPos(ScannedRobotEvent e) {
         setTurnRightRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
         setAhead(100);
         fireByEnergy();
-    }
-
-    public void setLeader() {
-        String[] teammates = getTeammates();
-        if (teammates != null) {
-            for (int i = 0; i < teammates.length; i++) {
-                switch (i) {
-                    case 0: {
-                        isLeader = true;
-                        break;
-                    }
-                }
-            }
-        }
     }
 
     private void fireByEnergy(){
@@ -111,10 +93,39 @@ public class BasicBot extends TeamRobot{
 
     private void sendBroadcastMessage(EnemyPosition p) {
         try {
-            broadcastMessage(p);
+            String messageString = p.getX() + "-" + p.getY();
+            broadcastMessage(messageString);
         } catch (IOException e) {
             out.println("Unable to send order: ");
             e.printStackTrace(out);
+        }
+    }
+
+    private void goTo(double x, double y) {
+        /* Transform current coordinates into a vector */
+        x -= getX();
+        y -= getY();
+
+        /* Calculate the angle to the target position */
+        double angleToTarget = Math.atan2(x, y);
+
+        /* Calculate the turn required get there */
+        double targetAngle = Utils.normalRelativeAngle(angleToTarget - getHeadingRadians());
+
+        /*
+         * The Java Hypot method is a quick way of getting the length
+         * of a vector. Which in this case is also the distance between
+         * our robot and the target location.
+         */
+        double distance = Math.hypot(x, y);
+
+        /* This is a simple method of performing set front as back */
+        double turnAngle = Math.atan(Math.tan(targetAngle));
+        setTurnRightRadians(turnAngle);
+        if(targetAngle == turnAngle) {
+            setAhead(distance);
+        } else {
+            setBack(distance);
         }
     }
 
@@ -128,5 +139,12 @@ public class BasicBot extends TeamRobot{
 
     private double getEnemyY(ScannedRobotEvent e, double angle) {
         return (robotStatus.getY() + Math.cos(angle) * e.getDistance());
+    }
+
+    @Override
+    public void onMessageReceived(MessageEvent event) {
+        super.onMessageReceived(event);
+        String[] coordinates = event.getMessage().toString().split("-");
+        goTo(Double.parseDouble(coordinates[0]), Double.parseDouble(coordinates[1]));
     }
 }
