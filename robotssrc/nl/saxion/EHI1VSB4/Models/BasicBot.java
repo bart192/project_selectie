@@ -18,8 +18,17 @@ public class BasicBot extends TeamRobot{
     @Override
     public void run() {
         super.run();
-        setLeader();
+        //setLeader();
         setRobotColors();
+
+        this.addCustomEvent(new Condition("wallAvoidance") {
+            public boolean test() {
+                return BasicBot.this.getX() <= (double)BasicBot.this.wallMargin ||
+                        BasicBot.this.getX() >= BasicBot.this.getBattleFieldWidth() - (double)BasicBot.this.wallMargin ||
+                        BasicBot.this.getY() <= (double)BasicBot.this.wallMargin ||
+                        BasicBot.this.getY() >= BasicBot.this.getBattleFieldHeight() - (double)BasicBot.this.wallMargin;
+            }
+        });
 
         while (true) {
             turnGunRight(360);
@@ -35,7 +44,6 @@ public class BasicBot extends TeamRobot{
 
     @Override
     public void onScannedRobot(ScannedRobotEvent e) {
-        if (isLeader) {
             // Calculate the angle to the scanned robot
             double angle = getAngleOfScannedRobot(e);
 
@@ -52,7 +60,6 @@ public class BasicBot extends TeamRobot{
             }
 
             moveToEnemyPos(e);
-        }
     }
 
     private void moveToEnemyPos(ScannedRobotEvent e) {
@@ -61,19 +68,19 @@ public class BasicBot extends TeamRobot{
         fire(100);
     }
 
-    public void setLeader() {
-        String[] teammates = getTeammates();
-        if (teammates != null) {
-            for (int i = 0; i < teammates.length; i++) {
-                switch (i) {
-                    case 0: {
-                        isLeader = true;
-                        break;
-                    }
-                }
-            }
-        }
-    }
+//    public void setLeader() {
+//        String[] teammates = getTeammates();
+//        if (teammates != null) {
+//            for (int i = 0; i < teammates.length; i++) {
+//                switch (i) {
+//                    case 0: {
+//                        isLeader = true;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     private void setRobotColors() {
         // Prepare RobotColors object
@@ -93,6 +100,17 @@ public class BasicBot extends TeamRobot{
         setRadarColor(c.radarColor);
         setScanColor(c.scanColor);
         setBulletColor(c.bulletColor);
+    }
+
+    public void onCustomEvent(CustomEvent e) {
+        if (e.getCondition().getName().equals("wallAvoidance") && this.tooCloseToWall <= 0) {
+            this.tooCloseToWall += this.wallMargin;
+            setTurnLeft(180);
+        }
+    }
+
+    public void onHitWall(HitWallEvent e) {
+        this.tooCloseToWall = 0;
     }
 
     private void sendBroadcastMessage(EnemyPosition p) {
