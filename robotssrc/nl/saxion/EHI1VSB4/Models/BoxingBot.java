@@ -9,23 +9,24 @@ import java.awt.*;
 import java.io.IOException;
 
 public class BoxingBot extends TeamRobot {
+    private int moveDirection=1;//which way to move
     private RobotStatus robotStatus;
-    private boolean enemyRobotLocked = false;
+    private boolean enemyLock = false;
 
-    public BoxingBot() {
-    }
 
-    //region Override methods
     @Override
     public void run() {
         super.run();
         setRobotColors();
 
-        while (!enemyRobotLocked) {
-            turnGunRight(360);
-            ahead(200);
-            turnLeft(180);
-        }
+        setAdjustRadarForGunTurn(true);
+        setAdjustRadarForRobotTurn(true);
+
+        turnRadarRightRadians(Double.POSITIVE_INFINITY);
+        do {
+            turnRadarRight(360);
+            scan();
+        } while (true);
     }
 
     @Override
@@ -33,36 +34,44 @@ public class BoxingBot extends TeamRobot {
         this.robotStatus = e.getStatus();
     }
 
-
     @Override
     public void onScannedRobot(ScannedRobotEvent e) {
-        if (!enemyRobotLocked) {
-            if (!isTeammate(e.getName())) {
-                enemyRobotLocked = true;
-                sendBroadcastMessage(e);
-            }
-        } else  {
+        double radarTurn =
+                // Absolute bearing to target
+                getHeadingRadians() + e.getBearingRadians()
+                        // Subtract current radar heading to get turn required
+                        - getRadarHeadingRadians();
+        if (!isTeammate(e.getName())) {
+            setTurnRadarRightRadians(Utils.normalRelativeAngle(radarTurn));
+
+            // Send enemy position to teammates
+            sendBroadcastMessage(e);
             moveToEnemyPos(e);
         }
     }
 
     @Override
-    public void onRobotDeath(RobotDeathEvent event) {
-        super.onRobotDeath(event);
-
-        if (!isTeammate(event.getName())) {
-            enemyRobotLocked = false;
-        }
-
+    public void onHitWall(HitWallEvent event) {
+        super.onHitWall(event);
+        setTurnRight(180);
     }
 
-    //endregion
+    @Override
+    public void onDeath(DeathEvent event) {
+        super.onDeath(event);
+        turnRadarRightRadians(Double.POSITIVE_INFINITY);
+    }
 
+    private void moveToEnemyPos(ScannedRobotEvent e) {
+        setTurnRightRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
+        setAhead(100);
+        fire(100);
+    }
 
-    //region Communication methods
-    private void sendBroadcastMessage(ScannedRobotEvent latestScanEvent) {
+    //region Communication
+    private void sendBroadcastMessage(ScannedRobotEvent p) {
         try {
-            broadcastMessage(latestScanEvent);
+            broadcastMessage("The enemy is coming!");
         } catch (IOException e) {
             out.println("Unable to send order: ");
             e.printStackTrace(out);
@@ -73,33 +82,10 @@ public class BoxingBot extends TeamRobot {
     @Override
     public void onMessageReceived(MessageEvent event) {
         super.onMessageReceived(event);
-        ScannedRobotEvent scannedRobotEvent = (ScannedRobotEvent) event.getMessage();
-        moveToEnemyPos(scannedRobotEvent);
-    }
-    //endregion
+        String message = (String) event.getMessage();
+        out.println(message);
 
-
-    //region Movement and fire methods
-    private void moveToEnemyPos(ScannedRobotEvent e) {
-        setTurnRightRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
-        setTurnRadarLeftRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
-        setAhead(100);
-        fireByEnergy();
-    }
-
-
-    private void fireByEnergy(){
-        double currentHP = this.getEnergy();
-
-        if(currentHP >= 75){
-            fire(3);
-        }
-        else if(currentHP > 35 && currentHP < 75){
-            fire(2);
-        }
-        else{
-            fire(1);
-        }
+        scan();
     }
     //endregion
 
@@ -109,10 +95,8 @@ public class BoxingBot extends TeamRobot {
         // Prepare RobotColors object
         TeamColors c = new TeamColors();
 
-        // Create custom bulletColor
         Color brown = new Color(139,69,19);
 
-        // Set the Teamcolors to the right color
         c.bodyColor = Color.black;
         c.gunColor = Color.red;
         c.radarColor = Color.white;
