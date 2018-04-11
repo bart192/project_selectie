@@ -19,14 +19,14 @@ public class BasicBot extends TeamRobot{
         super.run();
         setRobotColors();
 
-        this.addCustomEvent(new Condition("wallAvoidance") {
-            public boolean test() {
-                return BasicBot.this.getX() <= (double)BasicBot.this.wallMargin ||
-                        BasicBot.this.getX() >= BasicBot.this.getBattleFieldWidth() - (double)BasicBot.this.wallMargin ||
-                        BasicBot.this.getY() <= (double)BasicBot.this.wallMargin ||
-                        BasicBot.this.getY() >= BasicBot.this.getBattleFieldHeight() - (double)BasicBot.this.wallMargin;
-            }
-        });
+//        this.addCustomEvent(new Condition("wallAvoidance") {
+//            public boolean test() {
+//                return BasicBot.this.getX() <= (double)BasicBot.this.wallMargin ||
+//                        BasicBot.this.getX() >= BasicBot.this.getBattleFieldWidth() - (double)BasicBot.this.wallMargin ||
+//                        BasicBot.this.getY() <= (double)BasicBot.this.wallMargin ||
+//                        BasicBot.this.getY() >= BasicBot.this.getBattleFieldHeight() - (double)BasicBot.this.wallMargin;
+//            }
+//        });
 
         while (true) {
             turnGunRight(360);
@@ -49,19 +49,20 @@ public class BasicBot extends TeamRobot{
         double enemyX = getEnemyX(e, angle);
         double enemyY = getEnemyY(e, angle);
 
-        // Send enemy position to teammates
-        sendBroadcastMessage(new EnemyPosition(enemyX, enemyY));
+
 
         if (isTeammate(e.getName())) {
+            // Send enemy position to teammates
+            sendBroadcastMessage(new EnemyPosition(enemyX, enemyY));
             setTurnRight(180);
             return;
         }
 
-        // moveToEnemyPos(e);
+        moveToEnemyPos(e);
     }
 
     private void moveToEnemyPos(ScannedRobotEvent e) {
-        setTurnRightRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
+        setTurnRadarLeftRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
         setAhead(100);
         fireByEnergy();
     }
@@ -144,8 +145,6 @@ public class BasicBot extends TeamRobot{
         setTurnRightRadians(turnAngle);
         if(targetAngle == turnAngle) {
             setAhead(distance);
-        } else {
-            setBack(distance);
         }
     }
 
@@ -159,12 +158,5 @@ public class BasicBot extends TeamRobot{
 
     private double getEnemyY(ScannedRobotEvent e, double angle) {
         return (robotStatus.getY() + Math.cos(angle) * e.getDistance());
-    }
-
-    @Override
-    public void onMessageReceived(MessageEvent event) {
-        super.onMessageReceived(event);
-        String[] coordinates = event.getMessage().toString().split("-");
-        goTo(Double.parseDouble(coordinates[0]), Double.parseDouble(coordinates[1]));
     }
 }
