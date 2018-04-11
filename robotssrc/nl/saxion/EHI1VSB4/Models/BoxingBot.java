@@ -13,7 +13,7 @@ public class BoxingBot extends TeamRobot {
     private RobotStatus robotStatus;
     private boolean enemyLock = false;
 
-
+    //region Override methods
     @Override
     public void run() {
         super.run();
@@ -34,6 +34,9 @@ public class BoxingBot extends TeamRobot {
         this.robotStatus = e.getStatus();
     }
 
+    /*
+        Event that launches everytime a robot is scanned
+     */
     @Override
     public void onScannedRobot(ScannedRobotEvent e) {
         double radarTurn =
@@ -56,19 +59,51 @@ public class BoxingBot extends TeamRobot {
         setTurnRight(180);
     }
 
+    /*
+        Event that launches when a bot dies
+     */
     @Override
     public void onDeath(DeathEvent event) {
         super.onDeath(event);
+        // Scans again to look for another bot
         turnRadarRightRadians(Double.POSITIVE_INFINITY);
     }
+    //endregion
 
+
+    //region Movement methods
     private void moveToEnemyPos(ScannedRobotEvent e) {
         setTurnRightRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
         setAhead(100);
-        fire(100);
+        fireByEnergy();
     }
+    //endregion
+
+
+    // region Fire
+    /*
+        Changes firepower based on remaining energy.
+     */
+    private void fireByEnergy(){
+        double currentHP = this.getEnergy();
+
+        if(currentHP >= 75){
+            fire(3);
+        }
+        else if(currentHP > 35 && currentHP < 75){
+            fire(2);
+        }
+        else{
+            fire(1);
+        }
+    }
+    //endregion
+
 
     //region Communication
+    /*
+        Sends broadcast message
+     */
     private void sendBroadcastMessage(ScannedRobotEvent p) {
         try {
             broadcastMessage("The enemy is coming!");
@@ -78,7 +113,9 @@ public class BoxingBot extends TeamRobot {
         }
     }
 
-
+    /*
+        Receives message and scans again
+     */
     @Override
     public void onMessageReceived(MessageEvent event) {
         super.onMessageReceived(event);
@@ -114,14 +151,24 @@ public class BoxingBot extends TeamRobot {
 
 
     //region Helper methods
+    /*
+        Gets angle of the scanned robot
+     */
     private double getAngleOfScannedRobot(ScannedRobotEvent e) {
         return Math.toRadians((robotStatus.getHeading() + e.getBearing() % 360));
     }
 
+
+    /*
+        Get enemy's X position
+     */
     private double getEnemyX(ScannedRobotEvent e, double angle) {
         return (robotStatus.getX() + Math.sin(angle) * e.getDistance());
     }
 
+    /*
+        Get enemy's Y position
+     */
     private double getEnemyY(ScannedRobotEvent e, double angle) {
         return (robotStatus.getY() + Math.cos(angle) * e.getDistance());
     }
