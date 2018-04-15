@@ -12,6 +12,9 @@ public class BoxingBot extends TeamRobot {
     private int moveDirection=1;//which way to move
     private RobotStatus robotStatus;
     private boolean enemyLock = false;
+    double moveAmount;
+
+
 
     //region Override methods
     @Override
@@ -21,6 +24,9 @@ public class BoxingBot extends TeamRobot {
 
         setAdjustRadarForGunTurn(true);
         setAdjustRadarForRobotTurn(true);
+
+        // Initialize moveAmount to the maximum possible for this battlefield.
+        moveAmount = Math.max(getBattleFieldWidth(), getBattleFieldHeight());
 
         turnRadarRightRadians(Double.POSITIVE_INFINITY);
         do {
@@ -54,6 +60,19 @@ public class BoxingBot extends TeamRobot {
     }
 
     @Override
+    public void onHitRobot(HitRobotEvent e) {
+        if(isTeammate(e.getName())){
+            // If he's in front of us, set back up a bit.
+            if (e.getBearing() > -90 && e.getBearing() < 90) {
+                back(100);
+            } // else he's in back of us, so set ahead a bit.
+            else {
+                ahead(100);
+            }
+        }
+    }
+
+    @Override
     public void onHitWall(HitWallEvent event) {
         super.onHitWall(event);
         setTurnRight(180);
@@ -68,13 +87,21 @@ public class BoxingBot extends TeamRobot {
         // Scans again to look for another bot
         turnRadarRightRadians(Double.POSITIVE_INFINITY);
     }
+
+    @Override
+    public void onWin(WinEvent e) {
+        for (int i = 0; i < 50; i++) {
+            turnRight(30);
+            turnLeft(30);
+        }
+    }
     //endregion
 
 
     //region Movement methods
     private void moveToEnemyPos(ScannedRobotEvent e) {
         setTurnRightRadians(Utils.normalRelativeAngle(getAngleOfScannedRobot(e) - getHeadingRadians()));
-        setAhead(100);
+        setAhead(moveAmount);
         fireByEnergy();
     }
     //endregion
